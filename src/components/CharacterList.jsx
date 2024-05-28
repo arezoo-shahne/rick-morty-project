@@ -3,7 +3,7 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 
 function CharacterList({ characters, onShowDetails }) {
   return (
-    <div className="flex flex-col items-center justify-center md:block">
+    <div className="flex flex-col items-center justify-center md:block mt-4 md:mt-0">
       {characters.map((char) => (
         <CharacterItems key={char.id} item={char} onShowDetails={onShowDetails}>
           <button onClick={() => onShowDetails(char.id)}>

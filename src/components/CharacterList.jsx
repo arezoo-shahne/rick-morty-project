@@ -1,7 +1,14 @@
 import React from "react";
 import { EyeIcon } from "@heroicons/react/24/outline";
+import Loader from "./Loader";
 
-function CharacterList({ characters, onShowDetails }) {
+function CharacterList({ characters, onShowDetails,isLoading }) {
+  if (isLoading)
+    return (
+      <div className="flex-1  font-bold text-lg ml-64 mt-40 text-red-400">
+        <Loader />
+      </div>
+    );
   return (
     <div className="flex flex-col items-center justify-center md:block mt-4 md:mt-0">
       {characters.map((char) => (

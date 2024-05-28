@@ -29,7 +29,10 @@ function App() {
         );
         setCharacters(data.results.slice(0, 5));
       } catch (error) {
-        toast.error(error.response.data.error);
+        if (!axios.isCancel()) {
+          setCharacters([]);
+          toast.error(error.response.data.error);
+        }
       } finally {
         setIsLoading(false);
       }
@@ -54,12 +57,12 @@ function App() {
   };
   const isAddedToFavourite = favorite.map((i) => i.id).includes(characterId);
 
-  if (isLoading)
-    return (
-      <div className="flex-1  font-bold text-lg ml-64 mt-40 text-red-400">
-        <Loader />
-      </div>
-    );
+  // if (isLoading)
+  //   return (
+  //     <div className="flex-1  font-bold text-lg ml-64 mt-40 text-red-400">
+  //       <Loader />
+  //     </div>
+  //   );
   return (
     <div>
       <Toaster />

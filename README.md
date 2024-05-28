@@ -1,3 +1,9 @@
+To implement the project follow these steps :
+1-npm i (for install packages)
+2-npm run tail (to run tailwind}
+3-npm run dev
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
